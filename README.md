@@ -24,24 +24,21 @@ might help with the notation for mathematical expressions.
 
 As seen on the slides, the probability of choosing a good (first-element) pivot is 1/2 or 50%.
 
-With the median-of-three strategy, we assume that all three elements (first, middle, and last) are independent and randomly distributed. For three elements there are 6 total possible arrangments:
+With the median-of-three strategy, we assume that all three elements (first, middle, and last) are independent and randomly distributed. Following similar logic to the first-element method, we want a pivot that lie within the middle half of the array. This means that our elements need to have a median that lies within this range, there are 8 total permutations possible:
 
-First, middle, last
+1 All poor - All elements lead to a poor median outside the middle half. (PPP)
 
-Middle, last, first
+3 Some poor - Two elements (in any order) lead to poor median, but one element leads to a good median. This means there is a 50% chance the median is good. (PGG, PGP, GPP)
 
-Last, first, middle
+3 Most good - Two elements (in any order) lead to a good median, but one element leads to a bad median. The two good medians mean there is a 100% chance of a good median. (GPP, GPG, PGG)
 
-First,  last, middle
+1 All good - All elements lead to a good meadian. (GGG)
 
-Middle, first, last
+We now use these to find the probability of a good median:
 
-Last, middle, first
+$$ P = \frac{(1 \cdot 0)+(3 \cdot 0.5)+(3 \cdot 1)+(1 \cdot 1)}{8} = \frac{0+1.5+3+1}{8}=\frac{5.5}{8} = 0.6875$$
 
-This meanst that there are only two arrangments where the middle is near the actual median, meaning a good pivot choice (Last, middle, first and First, middle, last). This leads to a simple probability of $\frac{2}{6}=\frac{1}{3}$. Comparing this to a first-element pivot:
-
-$\frac{1}{2} ? \frac{1}{3} \rightarrow \frac{1}{2} > \frac{1}{3} \therefore \text{First element method is better than median-of-three}$
-
+This means that there is a 68.75% chance that the median method finds a good pivot, which is a higher chance than the first-element method. Therefore, median-of-three is a better pivot choice method.
 
 # Disclaimer
 
