@@ -38,7 +38,7 @@ We now use these to find the probability of a good median:
 
 $$ P_{good} = \frac{(\text{1 All poor} * \text{Probability of Good Median}) + (\text{3 Some poor} * \text{Probability of Good Median}) + (\text{3 Most good} * \text{Probability of Good Median}) + (\text{1 All good} * \text{Probability of Good Median})}{\text{Num of Permutations}}$$
 
-$$ P_{good} = \frac{(1 \cdot 0)+(3 \cdot \frac{1}{2})+(3 \cdot \frac{3}{3})+(1 \cdot 1)}{8} = \frac{0+1+2+1}{8}=\frac{5.5}{8} = 0.6875$$
+$$ P_{good} = \frac{(1 \cdot 0)+(3 \cdot \frac{1}{2})+(3 \cdot \frac{3}{3})+(1 \cdot 1)}{8} = \frac{0+1.5+3+1}{8}=\frac{5.5}{8} = 0.6875$$
 
 This means that there is a 68.75% chance that the median method finds a good pivot, which is a higher chance than the first-element method. Therefore, median-of-three is a better pivot choice method.
 
