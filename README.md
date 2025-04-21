@@ -28,15 +28,17 @@ With the median-of-three strategy, we assume that all three elements (first, mid
 
 1 All poor - All elements lead to a poor median outside the middle half. (PPP)
 
-3 Some poor - Two elements (in any order) lead to poor median, but one element leads to a good median. This means there is a 50% chance the median is good. (PGG, PGP, GPP)
+3 Some poor - Two elements (in any order) lead to poor median, but one element leads to a good median. This means there is a $\frac{1}{2}$ probability, or 50% chance the median is good. (PPG, PGP, GPP)
 
-3 Most good - Two elements (in any order) lead to a good median, but one element leads to a bad median. The two good medians mean there is a 100% chance of a good median. (GPP, GPG, PGG)
+3 Most good - Two elements (in any order) lead to a good median, but one element leads to a bad median. The two good medians mean there is a $\frac{3}{3}$ probability, or 100% chance of a good median. (GGP, GPG, PGG)
 
 1 All good - All elements lead to a good meadian. (GGG)
 
 We now use these to find the probability of a good median:
 
-$$ P = \frac{(1 \cdot 0)+(3 \cdot 0.5)+(3 \cdot 1)+(1 \cdot 1)}{8} = \frac{0+1.5+3+1}{8}=\frac{5.5}{8} = 0.6875$$
+$$ P_{good} = \frac{(\text{1 All poor} * \text{Probability of Good Median}) + (\text{3 Some poor} * \text{Probability of Good Median}) + (\text{3 Most good} * \text{Probability of Good Median}) + (\text{1 All good} * \text{Probability of Good Median})}{\text{Num of Permutations}}$$
+
+$$ P_{good} = \frac{(1 \cdot 0)+(3 \cdot \frac{1}{2})+(3 \cdot \frac{3}{3})+(1 \cdot 1)}{8} = \frac{0+1+2+1}{8}=\frac{5.5}{8} = 0.6875$$
 
 This means that there is a 68.75% chance that the median method finds a good pivot, which is a higher chance than the first-element method. Therefore, median-of-three is a better pivot choice method.
 
